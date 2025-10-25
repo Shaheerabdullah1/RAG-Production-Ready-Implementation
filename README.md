@@ -78,4 +78,8 @@ Implemented and compared five chunking methods:
 ```bash
 git clone https://github.com/<your-username>/RAG-Production-Grade.git
 cd RAG-Production-Grade
-  
+```
+### Install the Requirements
+```bash
+pip install -r requirements.txt
+```
