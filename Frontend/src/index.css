@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 340 82% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 340 82% 52%;
+
+    --radius: 0.375rem;
+
+    --grid-color: 0 0% 15%;
+    --grid-hover: 340 82% 52%;
+    
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 340 82% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 340 82% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+  }
+}
+
+@layer utilities {
+  .grid-pattern {
+    background-image: 
+      linear-gradient(to right, hsl(var(--grid-color)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--grid-color)) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .typing-indicator span {
+    animation: blink 1.4s infinite;
+  }
+  
+  .typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes blink {
+    0%, 60%, 100% { opacity: 0.3; }
+    30% { opacity: 1; }
+  }
+}
