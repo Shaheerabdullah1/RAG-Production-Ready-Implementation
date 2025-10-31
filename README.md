@@ -5,9 +5,9 @@ It includes **document preprocessing, embeddings, retrieval, Supabase integratio
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-### ✅ 1. Document Processing & Chunking
+### 1. Document Processing & Chunking
 - Load PDF documents using **PyMuPDF (fitz)**
 - Clean and preprocess raw text
 - Implement **five advanced chunking strategies**:
@@ -18,14 +18,14 @@ It includes **document preprocessing, embeddings, retrieval, Supabase integratio
   - LLM-based adaptive chunking  
 - Chunk statistics: Character count, word count, token estimation
 
-### ✅ 2. Embeddings (OpenAI + SentenceTransformer)
+###  2. Embeddings (OpenAI + SentenceTransformer)
 - Generate embeddings using:
   - Hugging Face: **all-mpnet-base-v2**
   - OpenAI Embeddings: **text-embedding-3-small (1536-dim)**
 - Batch processing and GPU acceleration support
 - Store embeddings locally and in **Supabase Postgres Vector DB**
 
-### ✅ 3. Supabase Vector Store Integration (`ingest.py`)
+### 3. Supabase Vector Store Integration (`ingest.py`)
 - Upload all chunks with metadata (page, source) and embeddings
 - Store using schema:
 ```sql
@@ -36,7 +36,7 @@ doc_id | chunk_index | content | metadata | embedding (vector[1536])
 SELECT match_documents(query_embedding, match_count, filter);
 ```
 
-### ✅ 4. Retrieval & RAG Pipeline (`embeddings_test.py`)
+###  4. Retrieval & RAG Pipeline (`embeddings_test.py`)
 - Query embedding + vector similarity search from Supabase
 - Validate returned chunks (relevant content + page numbers)
 - Example query output:
@@ -44,7 +44,7 @@ SELECT match_documents(query_embedding, match_count, filter);
 [1] Page 5 sim=0.923  Chunk: "Macronutrients are proteins, fats..."
 ```
 
-### ✅ 5. RAG Notebook (End-to-End)
+### 5. RAG Notebook (End-to-End)
 The notebook implements a full pipeline:
 | Step | Description |
 |------|-------------|
@@ -81,7 +81,7 @@ The notebook implements a full pipeline:
 └── .env                # Supabase credentials & OPENAI key
 ```
 
-### 🎯 Frontend Features
+###  Frontend Features
 - Upload text/PDF → Embedding pipeline
 - Ask questions using **RAG Chat UI**
 - Retrieve **source + page numbers + confidence score**
@@ -89,7 +89,7 @@ The notebook implements a full pipeline:
 
 ---
 
-## 🧠 RAG Architecture (Backend)
+## RAG Architecture (Backend)
 
 ```mermaid
 graph TD;
@@ -108,41 +108,41 @@ graph TD;
 ```
 ---
 
-## 📦 Installation
+##  Installation
 
-### 1️⃣ Clone the Repository
+### 1, Clone the Repository
 ```bash
 git clone https://github.com/<your-username>/RAG-Production-Ready
 cd RAG-Production-Ready
 ```
 
-### 2️⃣ Backend Setup
+### 2. Backend Setup
 ```bash
 pip install -r requirements.txt
 # or for notebook:
 pip install PyMuPDF supabase openai sentence-transformers ragas
 ```
 
-### 3️⃣ Configure Environment (`.env`)
+### 3. Configure Environment (`.env`)
 ```
 SUPABASE_URL=your-url
 SUPABASE_SERVICE_ROLE_KEY=your-key
 OPENAI_API_KEY=your-openai-key
 ```
 
-### 4️⃣ Run Ingestion
+### 4. Run Ingestion
 ```bash
 python ingest.py
 ```
 
-### 5️⃣ Test Embedding Search
+### 5. Test Embedding Search
 ```bash
 python embeddings_test.py
 ```
 
 ---
 
-## ✅ Future Enhancements (Planned)
+## Future Enhancements (Planned)
 - 🔹 Add API using FastAPI for RAG backend  
 - 🔹 Enable multi-document support with doc_id filtering  
 - 🔹 Convert into a microservice architecture  
@@ -151,7 +151,7 @@ python embeddings_test.py
 
 ---
 
-## 🏁 Final Notes
+## Final Notes
 ✔ This README merges both:
 - Notebook-style RAG implementation  
 - Production pipeline with Supabase Vector DB  
@@ -160,7 +160,7 @@ python embeddings_test.py
 
 ---
 
-## 📄 License
+## License
 MIT License – Free to modify & use.
 
 ---
