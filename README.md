@@ -93,18 +93,19 @@ The notebook implements a full pipeline:
 
 ```mermaid
 graph TD;
-    A[PDF Document] --> B[Text Extraction (PyMuPDF / fitz)];
+    A[PDF Document] --> B[Text Extraction - PyMuPDF/fitz];
     B --> C[Preprocessing & Cleaning];
-    C --> D[Chunking Strategies (Fixed, Recursive, Semantic, LLM-Based)];
-    D --> E[Embeddings (OpenAI / SentenceTransformer)];
+    C --> D[Chunking Strategies];
+    D --> E[Embeddings - OpenAI/SentenceTransformer];
     E --> F[Supabase Vector Store];
     G[User Query] --> H[Query Embedding];
     H --> I[Vector Similarity Search];
     I --> J[Retrieve Top-k Chunks];
-    J --> K[Prompt Formatter (RAG)];
+    J --> K[Prompt Formatter - RAG];
     K --> L[OpenAI GPT-4];
     L --> M[Final Answer + Citations];
 
+```
 ---
 
 ## 📦 Installation
