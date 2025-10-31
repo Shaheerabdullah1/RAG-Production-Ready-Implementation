@@ -91,7 +91,7 @@ The notebook implements a full pipeline:
 
 ## 🧠 RAG Architecture (Backend)
 
-```mermaid
+```
 graph TD;
     A[PDF Document] --> B[Text Extraction (fitz)];
     B --> C[Preprocessing & Cleaning];
