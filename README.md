@@ -104,7 +104,6 @@ graph TD;
     J --> K[Prompt Formatter (RAG)];
     K --> L[OpenAI GPT-4];
     L --> M[Final Answer + Citations];
-```
 
 ---
 
